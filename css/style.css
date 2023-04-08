@@ -84,6 +84,21 @@
   display: flex;
   align-items: center;
   margin-top: 10px;
+  margin-bottom: 15px;
+}
+.parent > .inner > .expense-content > #expenses {
+  width: 100%;
+  background-color: rgb(255, 145, 0);
+}
+.parent > .inner > .expense-content > #expenses > .list-group {
+  width: 100%;
+  background: aquamarine;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 5px;
+}
+.parent > .inner > .expense-content > #expenses > .list-group > li {
+  border-bottom: 1px solid rgb(231, 231, 231);
+  padding: 12px;
 }
 .parent > .inner > .result-box {
   width: 100%;
