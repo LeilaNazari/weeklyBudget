@@ -72,7 +72,6 @@
 .parent > .inner > .expense-content {
   width: 100%;
   height: 36vh;
-  background-color: rgb(130, 144, 55);
   overflow: auto;
 }
 .parent > .inner > .expense-content > input {
@@ -88,11 +87,9 @@
 }
 .parent > .inner > .expense-content > #expenses {
   width: 100%;
-  background-color: rgb(255, 145, 0);
 }
 .parent > .inner > .expense-content > #expenses > .list-group {
   width: 100%;
-  background: aquamarine;
   border: 1px solid rgb(231, 231, 231);
   border-radius: 5px;
 }
@@ -103,5 +100,31 @@
 .parent > .inner > .result-box {
   width: 100%;
   height: 15%;
-  background-color: rgb(70, 14, 58);
+  display: flex;
+}
+.parent > .inner > .result-box > .budget {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.parent > .inner > .result-box > .budget > .Budget-value {
+  width: 40%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(195, 248, 255);
+}
+.parent > .inner > .result-box > .budget > .remaining {
+  width: 40%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(182, 255, 194);
+
 }
