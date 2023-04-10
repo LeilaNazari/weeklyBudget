@@ -1,8 +1,13 @@
 //class
-
+class Budget {
+  constructor(budget) {
+    this.budget = budget;
+  }
+}
 //variables
 
 let budgetValue;
+let budget;
 
 //eventListeners
 
@@ -15,6 +20,10 @@ function eventListeners() {
     //Validate Budget value which enter user
     if (budgetValue === null || budgetValue === "" || budgetValue === "0") {
       window.location.reload();
+    } else {
+      //instaciate Budget class
+      budget = new Budget(budgetValue);
+      console.log(budget);
     }
   });
 }
