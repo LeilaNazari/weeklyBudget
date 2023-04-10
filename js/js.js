@@ -14,7 +14,8 @@ class HTML {
   showMessage(message, className) {
     const box = document.createElement("div");
     box.classList.add(className);
-    console.log(box);
+    const primary = document.querySelector(".message");
+    primary.innerHTML = box.innerText = message;
   }
 }
 

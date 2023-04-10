@@ -45,6 +45,12 @@
   margin-right: 30px;
   height: 100%;
 }
+.parent > .inner > .expense-box > form > .form-group.message {
+  padding: 10px 0;
+  margin-left: 30px;
+  color: red;
+  font-size: 20px;
+}
 
 .parent > .inner > .expense-box > form > .form-group > input {
   height: 55%;
@@ -126,5 +132,4 @@
   padding: 10px;
   border-radius: 5px;
   background-color: rgb(182, 255, 194);
-
 }
