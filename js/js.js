@@ -7,7 +7,14 @@ class Budget {
 //every thing Related to the HTML
 class HTML {
   insertBudget(amount) {
-    console.log(amount);
+    total.innerHTML = amount;
+    left.innerHTML = amount;
+  }
+  //show message to user
+  showMessage(message, className) {
+    const box = document.createElement("div");
+    box.classList.add(className);
+    console.log(box);
   }
 }
 
@@ -17,6 +24,7 @@ let budgetValue;
 let budget;
 let total = document.querySelector("span#total");
 let left = document.querySelector("span#left");
+const addExpense = document.querySelector("#add-expense");
 
 const html = new HTML();
 //eventListeners
@@ -34,6 +42,19 @@ function eventListeners() {
       budget = new Budget(budgetValue);
 
       html.insertBudget(budget.budget);
+    }
+  });
+  //get value from the form
+  addExpense.addEventListener("submit", function (e) {
+    e.preventDefault();
+    //access to the value of input
+    const expense = document.querySelector("#expense").value;
+    const amount = document.querySelector("#amount").value;
+
+    if (expense === "" || amount === "") {
+      html.showMessage("please enter all fields", "wrong");
+    } else {
+      console.log("right");
     }
   });
 }
