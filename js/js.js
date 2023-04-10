@@ -5,21 +5,26 @@ class Budget {
   }
 }
 //every thing Related to the HTML
-class HTML {}
+class HTML {
+  insertBudget(amount) {
+    console.log(amount);
+  }
+}
 
 //variables
 
 let budgetValue;
 let budget;
+let total = document.querySelector("span#total");
+let left = document.querySelector("span#left");
 
-const html =
-  //eventListeners
+const html = new HTML();
+//eventListeners
 
-  eventListeners();
+eventListeners();
 function eventListeners() {
   document.addEventListener("DOMContentLoaded", function () {
     budgetValue = prompt("Please enter your weekly budge:");
-    console.log(budgetValue);
 
     //Validate Budget value which enter user
     if (budgetValue === null || budgetValue === "" || budgetValue === "0") {
@@ -27,7 +32,8 @@ function eventListeners() {
     } else {
       //instaciate Budget class
       budget = new Budget(budgetValue);
-      console.log(budget);
+
+      html.insertBudget(budget.budget);
     }
   });
 }
