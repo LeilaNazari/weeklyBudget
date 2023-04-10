@@ -4,14 +4,18 @@ class Budget {
     this.budget = budget;
   }
 }
+//every thing Related to the HTML
+class HTML {}
+
 //variables
 
 let budgetValue;
 let budget;
 
-//eventListeners
+const html =
+  //eventListeners
 
-eventListeners();
+  eventListeners();
 function eventListeners() {
   document.addEventListener("DOMContentLoaded", function () {
     budgetValue = prompt("Please enter your weekly budge:");
