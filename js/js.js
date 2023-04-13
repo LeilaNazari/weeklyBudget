@@ -20,6 +20,15 @@ class HTML {
     primary.innerHTML =
       box.innerText = `<span class='text ${className}'>${message}</span>`;
   }
+
+  insertExpense(name, amount) {
+    const listBox = document.querySelector("#expenses .list-group");
+    let li = document.createElement("li");
+
+    li.innerHTML = `${name} 
+    <span>${amount}</span>`;
+    listBox.appendChild(li);
+  }
 }
 
 //variables
@@ -58,7 +67,7 @@ function eventListeners() {
     if (expense === "" || amount === "") {
       html.showMessage("please enter all fields", "wrong");
     } else {
-      html.showMessage("All fields are correct", "right");
+      html.insertExpense(expense, amount);
     }
 
     setTimeout(() => {
