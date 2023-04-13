@@ -14,8 +14,11 @@ class HTML {
   showMessage(message, className) {
     const box = document.createElement("div");
     box.classList.add(className);
+    box.appendChild(document.createTextNode(message));
+    console.log(box);
     const primary = document.querySelector(".message");
-    primary.innerHTML = box.innerText = message;
+    primary.innerHTML =
+      box.innerText = `<span class='${className}'>${message}</span>`;
   }
 }
 
@@ -55,7 +58,7 @@ function eventListeners() {
     if (expense === "" || amount === "") {
       html.showMessage("please enter all fields", "wrong");
     } else {
-      console.log("right");
+      html.showMessage("All fields are correct", "right");
     }
   });
 }
