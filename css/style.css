@@ -165,3 +165,6 @@
 .parent > .inner > .result-box > .budget > .remaining-color-red {
   background-color: rgb(255, 182, 182);
 }
+#ex {
+  margin-bottom: 20px;
+}
