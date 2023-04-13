@@ -2,6 +2,11 @@
 class Budget {
   constructor(budget) {
     this.budget = budget;
+    this.budgetLeft = this.budget;
+  }
+
+  subtractFromBudget(amount) {
+    return (this.budgetLeft -= amount.value);
   }
 }
 //every thing Related to the HTML
@@ -20,7 +25,7 @@ class HTML {
     primary.innerHTML =
       box.innerText = `<span class='text ${className}'>${message}</span>`;
   }
-
+  //display Expense in the html
   insertExpense(name, amount) {
     const listBox = document.querySelector("#expenses .list-group");
     let li = document.createElement("li");
@@ -28,6 +33,30 @@ class HTML {
     li.innerHTML = `${name} 
     <span>${amount}</span>`;
     listBox.appendChild(li);
+  }
+
+  //subtrack expense amount from budget
+
+  trackBudget() {
+    const budgetLeftTomans = budget.subtractFromBudget(amount);
+    console.log(budgetLeftTomans);
+    left.innerHTML = `${budgetLeftTomans}`;
+
+    //if less than 25% budget left change color to the danger
+    if (budget.budget / 4 > budgetLeftTomans) {
+      left.parentElement.parentElement.classList.remove(
+        "remaining-color-green",
+        "remaining-color-orange"
+      );
+      left.parentElement.parentElement.classList.add("remaining-color-red");
+    } else if (budget.budget / 2 > budgetLeftTomans) {
+      //if less than 50% budget left change color to the danger
+      left.parentElement.parentElement.classList.remove(
+        "remaining-color-green",
+        "remaining-color-orange"
+      );
+      left.parentElement.parentElement.classList.add("remaining-color-orange");
+    }
   }
 }
 
@@ -68,6 +97,7 @@ function eventListeners() {
       html.showMessage("please enter all fields", "wrong");
     } else {
       html.insertExpense(expense, amount);
+      html.trackBudget(amount);
     }
 
     setTimeout(() => {

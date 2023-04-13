@@ -123,7 +123,7 @@
 }
 .parent > .inner > .expense-content > #expenses > .list-group > li > span {
   padding: 2px 22px;
-  background-color: blue;
+  background-color: rgb(0, 123, 255);
   border-radius: 15px;
   color: white;
 }
@@ -155,5 +155,13 @@
   align-items: center;
   padding: 10px;
   border-radius: 5px;
+}
+.parent > .inner > .result-box > .budget > .remaining-color-green {
   background-color: rgb(182, 255, 194);
+}
+.parent > .inner > .result-box > .budget > .remaining-color-orange {
+  background-color: rgb(255, 192, 109);
+}
+.parent > .inner > .result-box > .budget > .remaining-color-red {
+  background-color: rgb(255, 182, 182);
 }
