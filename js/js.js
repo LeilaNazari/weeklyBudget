@@ -15,10 +15,10 @@ class HTML {
     const box = document.createElement("div");
     box.classList.add(className);
     box.appendChild(document.createTextNode(message));
-    console.log(box);
+
     const primary = document.querySelector(".message");
     primary.innerHTML =
-      box.innerText = `<span class='${className}'>${message}</span>`;
+      box.innerText = `<span class='text ${className}'>${message}</span>`;
   }
 }
 
@@ -60,5 +60,10 @@ function eventListeners() {
     } else {
       html.showMessage("All fields are correct", "right");
     }
+
+    setTimeout(() => {
+      document.querySelector(".text").remove();
+    }, 10000);
+    addExpense.reset();
   });
 }
